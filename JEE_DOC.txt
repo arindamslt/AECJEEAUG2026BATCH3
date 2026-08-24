@@ -1,0 +1,124 @@
+DATE:24.08.2026
+=========================================================================================
+JEE
+==============================================
+JAVA ENTERPRISE EDITION
+TYPES OF APPLICATION
+=================================================
+1.DESKTOP OR STAND ALONE APPLICATION
+2.WEB APPLICATION
+3.ENTERPRISE APPLICATION
+4.MOBILE APPLICATION
+5.ML APPS OR AI APPS
+====================================================
+HTML
+===================================
+HTML PROVIDE STRUCTURE OF THE CONTENT OF THE WEB PAGE
+WEB PAGE
+============================================
+IT IS A ELECTRONIC PAGE WHERE WE DISPLAY SOME CONTENTS
+========================================================
+HTML IS COLLECTION OF ELEMENTS
+=================================================
+1.HEADING ELEMENTS
+2.PARAGRAPH ELEMENTS
+3.LIST ELEMENTS
+4.TABLE ELEMENTS
+5.IFRAME ELEMENTS
+=====================================================
+EACH ELEMENTS ARE REPRESENTED BY TAGS
+==========================================
+1.OPENING TAG
+2.CLOSING TAG
+3.SELF CLOSING TAG
+<h2>HTML DOC</h2>
+opening
+tag          closing tag
+<br/>===SELF CLOSING TAG
+===============================================================
+HTML IS MARKUP LANGUAGE
+=======================================================
+A LANGUAGE CONSIDERED TO BE MARK UP IF THERE IS A TAG,ATTRIBUTE AND PARAMETERS ARE THERE
+LIST
+=================================================================
+1.UN ORDERED LIST
+2.ORDERED LIST
+3.DEFINATION LIST
+======================================================
+
+HEADING & PARAGRAPH
+LIST ELEMENT
+LIST WITH ATTRIBUTE
+IMAGE ELEMENT
+
+<h1>  </h2>
+<img />
+
+TABLE ELEMENT
+INTER NAVIGATION
+===========================================================
+LINK BETWEEN THE PAGES
+===================================================
+INTRA NAVIGATION
+=================================================
+SAME PAGE LINKING
+<div>
+
+</div>
+
+IFRAME
+============================================
+IF ENTIRE HTML PAGE WANT TO IN CORPORATE INTO ANOTHER PAGE THEN WE WILL USE IFRAME.
+=================================================================================
+CSS
+===============================================
+CASCADDING STYLE SHEET
+==================================================
+PURPOSE
+======================================================
+IT IS A STYLING LANGUAGE TO STYLE OR FORMATTING THE HTML PAGE
+=========================================================
+TYPES OF CSS
+===================================================
+1.INLINE CSS
+2.INTERNAL CSS
+3.EXTERNAL CSS
+==================================================
+IN CSS THERE ARE COLLECTION OF PROPERTIES
+THESE PROPERTIES ARE IN KEY VALUE PAIR
+=================================================
+<h2 style="color:red;">    </h2>
+
+color:red;
+key   value
+SELECTOR OF CSS
+===============================================
+1.TAG NAME
+2.ID VALUE 
+3.CLASS VALUE
+
+
+INLINE CSS          VS        INTERNAL CSS
+==================================================
+1.UNIQUE STYLING             1.MORE STYLING
+2.ATLEAST THREE STYLING      2.APPLY MORE STYLING
+RECOMMENDED          
+========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
