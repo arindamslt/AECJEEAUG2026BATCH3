@@ -104,6 +104,81 @@ INLINE CSS          VS        INTERNAL CSS
 2.ATLEAST THREE STYLING      2.APPLY MORE STYLING
 RECOMMENDED          
 ========================================================
+DATE:25.08.2026
+=========================================================
+EXTERNAL CSS
+====================================
+WE DO NOT CSS CODE IN HTML FILE
+WE CREATE A SEPERATE CSS WHERE WE WRITE CSS CODE
+IT'S EXTENSION IS .css
+when it is used
+========================================
+WHEN DESIGN IS MUCH MORE COMPLEX
+MULTIPLE ELEMENTS WANT SAME STYLING
+=======================================
+ExternalCss.html
+style.css
+
+LINK HTML TO CSS
+==========================================
+<head>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+TEXT DECORATION
+===============================================================
+MARGIN PADDING
+============================================================
+LAYOUT
+==========================================================
+TYPES OF LAYOUT
+=============================================================
+1.FLEX LAYOUT
+2.GRID LAYOUT
+===========================================================
+NAVIGATION BAR
+=========================================================
+Nav.html
+Nav.css
+
+
+BOOTSTRAP
+===========================================================================
+BOOTSTRAP IS POWERFULL,EXTENSIBLE AND SELF PACKED FRONT END TOOL KIT.
+PURPOSE
+========================
+1.FASTER DESIGN
+2.TEMPLATE DESIGN
+3.TIME SAVING
+IN WHICH CASES WE USE BOOTSTRAP
+=================================
+1.TEXT
+2.BACKGROUND
+3.TABLE DESIGN
+4.FORM DESIGN
+Bootstrap1.html
+=========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
