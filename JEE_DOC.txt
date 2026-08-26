@@ -159,6 +159,316 @@ IN WHICH CASES WE USE BOOTSTRAP
 4.FORM DESIGN
 Bootstrap1.html
 =========================================================
+DATE:26.08.2026
+=============================================================
+JAVASCRIPT
+============================================================
+JAVASCRIPT IS A PROGRAMMING LANGUAGE.BEFORE 2010 IT IS CALLED SCRIPTING LANGUAGE.
+JAVASCRIPT ABLE TO COMMUNICATE DATABASE AND APPLICATION SERVER
+PURPOSE
+=========================================================
+1.TO CREATE DYNAMIC USER INTERFACE
+2.CLIENT SIDE AND SERVER SIDE VALIDATION
+3.COMMUNICATE FRONT END AND BACK END APPLICATION
+=========================================================
+AREA OF JAVASCRIPT
+========================================================
+1.STAND ALONE OR DESKTOP APPLICATION
+2.WEB APPLICATION
+3.ML APPS
+4.MOBILE APPLICATION
+===========================================================
+TO RUN A JAVASCRIPT
+===============================================================
+PROVIDE JAVASCRIPT RUN TIME ENVIRONMENT
+======================================================
+NODE JS
+============================================
+USING HTML PAGE
+===========================================
+<header>
+
+<script>
+
+</script>
+</header>
+=====================================================
+DATA TYPES
+=========================================================
+1.PRIMITIVE TYPES:number,string,bigint,boolean,undefined,symbol,null
+2.NON PRIMITIVE TYPES:object
+HOW CAN I DECLARE A VARIABLE
+======================================
+var
+let
+const
+TYPES OF JAVASCRIPT FUNCTION
+===================================
+1.CONCRETE FUNCTION
+2.PARAMETERISED FUNCTION
+3.FUNCTION WITH RETURN STATEMENT
+4.ANNONYMOUS FUNCTION
+5.CALLBACK FUNCTION
+6.HIGHER ORDER FUNCTION
+7.ARROW FUNCTION
+FUNCTION EXPRESSION
+DOM
+=================================
+DOCUMENT OBJECT MODEL
+HTML DOCUMENT ARE COMPILED AND CONVERTED OBJECTS CALLED NODES AND THESE NODES ARE
+IN TREE  LIKE DATA STRUCTURE CALLED DOM.
+
+EVENT
+============================================================
+STATE CHANGE OF SOUCE
+EVENT HANDELLING
+VALIDATION CRITERIA
+==========================
+USERNAME LENGTH MUST BE ATLEAST 5 CHARECTER LONG
+PASSWORD IN BETWEEN 5 TO 8 CHARECTER LONG
+CONFIRM PASSWORD AND PASSWORD MUST BE SAME
+MOBILE NUMBER IS ONLY DIGIT
+====================================================================
+DBMS
+=======================================================================
+DATABASE MANAGEMENT SYSTEM
+RDBMS
+===========================================
+RELATIONAL DATABASE MANAGEMENT SYSTEM
+DATABASE
+========================
+DATA
+FIELDS
+RECORDS/TUPLE
+TABLE
+DATABASE
+DATABASE
+=======================================
+COLLECTION OF INTERELATED TABLES OR DATA
+DBMS OR RDBMS====DATABASE+SQL(STRUCTURED QUERY LANGUAGE)
+JAVA
+==========================================================
+PROCEDURAL LANGUAGE
+==================================================
+HOW PART===KNOWN TO US
+WHAT PART ===KNOWN TO US
+====================================================
+NON PROCEDURAL LANGUAGE
+================================
+HOW PART IS NOT KNOWN TO US
+WHAT PART IS KNOWN TO US
+SELECT * FROM STUDENT;
+RDBMS
+======================================
+SOFTWARE
+========================================
+1.ORACLE
+2.SQLSERVER
+3.MYSQL
+===============================================================
+SQL COMMANDS
+===================================================
+1.DDL==DATA DEFINATION LANGUAGE
+CREATE,ALTER,RENAME,DROP,TRUNCATE
+2.DML===DATA MANIPULATION LANGUAGE
+INSERT,UPDATE,DELETE,MERGE
+3.DATA RETRIEVAL
+SELECT
+4.TCL==TRANSACTION CONTROL LANGUAGE
+COMMIT,ROLLBACK
+5.DCL==DATA CONTROL LANGUAGE
+GRANT,REVOKE
+
+DATA TYPES IN MYSQL
+==========================
+VARCHAR
+CHAR
+INT
+DECIMAL
+DATE====YYYY-MM-DD
+        2026-08-26
+TIMESTAMP==BOTH DATE AND TIME
+VARCHAR
+CHAR
+SNAME CHAR (25)   GENDER CHAR(1)===M/F
+                   MARITAL STATUS ==Y/N
+DEB
+SNAME VARCHAR(25)==
+ARCHITECTURE OF MYSQL
+=================================
+
+HOW TO LOGIN IN MYSQL
+================================
+1.COMMAND LINE
+2.MYSQL COMMAND LINE CLIENT
+3.MYSQL WORKBENCH
+=======================================
+SHOW DATABASE;
+CREATE DATABASE JEESD;
+USE JEESD;
+SHOW TABLES;
+TABLE CAN BE WITH OR WITHOUT CONSTRAINTS
+-================================================
+CREATE TABLE CUSTOMER
+(CID VARCHAR(10),
+ CNAME VARCHAR(25),
+ CPHNO VARCHAR(10)
+);
+mysql> DESC CUSTOMER;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| CID   | varchar(10) | YES  |     | NULL    |       |
+| CNAME | varchar(25) | YES  |     | NULL    |       |
+| CPHNO | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+INSERT INTO CUSTOMER VALUES('C1','ARUP','454545');
+mysql> SELECT * FROM CUSTOMER;
++------+-------+--------+
+| CID  | CNAME | CPHNO  |
++------+-------+--------+
+| C1   | ARUP  | 454545 |
++------+-------+--------+
+
+CONSTRAINTS
+=================================================================
+BEFORE INSERTING ANY DATA INTO TABLE YOU HAVE TO SATISFY CERTAIN RULES AND REGULATIONS
+
+TYPES OF CONSTRAINT
+=====================================
+1.PRIMARY KEY===IT WILL NOT ACCEPT NULL VALUE AS WELL AS DUPLICATE VALUE
+2.NOT NULL======YOU CAN NOT INSERT NULL VALUE
+3.UNIQUE KEY===IT DOES NOT ACCEPT DUPLICATE VALUE BUT ACCEPT NULL VALUE
+4.CHECK CONSTRAINT===IT WILL SUPPORT ONLY PREDEFINED VALUES
+                     AGE:18 TO 58
+                     GENDER==M/F
+5.FOREIGN KEY===IT WLL ACCEPT OTHER TABLE PRIMARY KEY VALUE
+==============================================================================
+CREATE TABLE DEPT
+(DEPTNO VARCHAR(10),
+ DNAME  VARCHAR(25) NOT NULL,
+ LOC    VARCHAR(25) NOT NULL,
+CONSTRAINT DEPT_DEPTNO_PK PRIMARY KEY(DEPTNO)
+);
+mysql> DESC DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | varchar(10) | NO   | PRI | NULL    |       |
+| DNAME  | varchar(25) | NO   |     | NULL    |       |
+| LOC    | varchar(25) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+INSERT INTO DEPT VALUES('D1','MKTG','KOLKATA');
+mysql> SELECT * FROM DEPT;
++--------+-------+---------+
+| DEPTNO | DNAME | LOC     |
++--------+-------+---------+
+| D1     | MKTG  | KOLKATA |
++--------+-------+---------+
+INSERT INTO DEPT VALUES('D2','FINANCE','CHENNAI');
+INSERT INTO DEPT VALUES('D3','HR','DELHI');
+INSERT INTO DEPT VALUES('D4','OPRN','KOLKATA');
+mysql> SELECT * FROM DEPT;
++--------+---------+---------+
+| DEPTNO | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | CHENNAI |
+| D3     | HR      | DELHI   |
+| D4     | OPRN    | KOLKATA |
++--------+---------+---------+
+====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
 
 
 
