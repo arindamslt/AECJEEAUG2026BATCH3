@@ -737,6 +737,93 @@ mysql> SELECT * FROM EMP_DEPT_VW;
 | ROBIN   | MANAGER | 55000 | D3     | HR      | DELHI   |
 +---------+---------+-------+--------+---------+---------+
 ======================================================================================
+JDBC
+====================================================================================
+JAVA DATABASE CONNECTIVITY
+===================================================================================
+import java.sql.*;===SET OF INTERFACES AND SET OF CLASSES
+LIST OF INTERFACES
+==============================================
+1.Connection====TO ESTABLISH THE CONNECTION
+2.Statement======EXECUTE SQL QUERIES
+3.PreparedStatement===EXECUTE PRE COMPILED SQL STATEMENT
+4.CallbleStatement==== EXECUTE STORED PROCEDURE
+5.ResultSet====STORING DATA FROM DATABASE
+6.ResultSetMetaData====GIVE DETAILS INFORMATION OF RESULTSET
+7.DatabaseMetadata=====GIVE DETALS INFORMATION OF DATABASE
+CLASSES
+========================================================
+1.DriverManager===REGISTER AND LOAD THE JDBC DRIVER
+2.Date======DEALS WITH DATE DATA TYPE
+3.TimeStamp====DEALS WITH DATE AND TIME
+=========================================================
+EXCEPTION HANDLE HERE
+==========================================================
+1.ClassNotFoundException
+2.SQLException
+================================================
+TYPES OF JDBC DRIVER
+================================================
+1.TYPE-I DRIVER
+2.TYPE-II DRIVER
+3.TYPE-III DRIVER
+4.TYPE-IV DRIVER
+===============================================
+STEPS OF COMMUNICATION
+===================================================
+1.import java.sql.*;
+2.REGISTER AND LOAD THE DRIVER
+3.ESTABLISH THE CONNECTION
+4.CREATE THE STATEMENT
+5.EXECUTE THE STATEMENT
+6.STORE THE DATA INTO RESULTSET
+7.CLOSE THE CONNECTION AND STATEMENT
+=================================================
+DATABASE:JEESD
+USERNAME:root
+PASSWORD:arindam
+PORT NUMBER:3306
+MACHINE NAME:localhost
+====================================================
+USE JEESD;
+SHOW TABLES;
+CREATE TABLE PRODUCT
+(PID VARCHAR(10),
+ PNAME VARCHAR(25) NOT NULL,
+ PQTY   INT,
+ PRICE DECIMAL,
+ CONSTRAINT PRODUCT_PID_PK PRIMARY KEY(PID)
+);
+DESC PRODUCT;
+
+INSERT INTO PRODUCT VALUES('P1','TV',5,25000);
+INSERT INTO PRODUCT VALUES('P2','REFRIGERATOR',7,27000);
+SELECT * FROM PRODUCT;
+mysql> SELECT * FROM PRODUCT;
++-----+--------------+------+-------+
+| PID | PNAME        | PQTY | PRICE |
++-----+--------------+------+-------+
+| P1  | TV           |    5 | 25000 |
+| P2  | REFRIGERATOR |    7 | 27000 |
++-----+--------------+------+-------+
+
+ System.out.println(rs.getString(1)+"==>"+rs.getString(2)+"===>"+rs.getInt(3)+"===>"+rs.getDouble(4));
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
