@@ -380,6 +380,326 @@ mysql> SELECT * FROM DEPT;
 | D4     | OPRN    | KOLKATA |
 +--------+---------+---------+
 ====================================================================================
+DATE:27.08.202
+===================================================================================
+SHOW DATABASES;
+USE JEESD;
+SHOW TABLES;
+SELECT * FROM DEPT;
+
+CREATE TABLE EMP
+(EID VARCHAR(10),
+ ENAME VARCHAR(25) NOT NULL,
+ JOB   VARCHAR(25),
+ SAL   DECIMAL,
+ COMM  DECIMAL,
+ HIREDATE DATE,
+ DEPTNO VARCHAR(10),
+ CONSTRAINT EMP_EID_PK PRIMARY KEY(EID),
+ CONSTRAINT EMP_DEPTNO_FK FOREIGN KEY(DEPTNO) REFERENCES DEPT(DEPTNO)
+);
+mysql> DESC EMP;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EID      | varchar(10)   | NO   | PRI | NULL    |       |
+| ENAME    | varchar(25)   | NO   |     | NULL    |       |
+| JOB      | varchar(25)   | YES  |     | NULL    |       |
+| SAL      | decimal(10,0) | YES  |     | NULL    |       |
+| COMM     | decimal(10,0) | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| DEPTNO   | varchar(10)   | YES  | MUL | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+INSERT INTO EMP VALUES('E1','SUMAN','MANAGER',50000,5000,'2018-02-12','D1');
+SELECT * FROM EMP;
+mysql> SELECT * FROM EMP;
++-----+-------+---------+-------+------+------------+--------+
+| EID | ENAME | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+-------+---------+-------+------+------------+--------+
+| E1  | SUMAN | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
++-----+-------+---------+-------+------+------------+--------+
+mysql> SELECT * FROM EMP;
++-----+---------+---------+-------+------+------------+--------+
+| EID | ENAME   | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+---------+-------+------+------------+--------+
+| E1  | SUMAN   | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
+| E2  | ALOKE   | CLERK   | 25000 | 2000 | 2016-02-15 | D1     |
+| E3  | ANNANYA | ANALYST | 45000 | 6000 | 2016-05-15 | D2     |
+| E4  | RUPAM   | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E5  | JAYANTA | CLERK   | 30000 | NULL | 2018-07-18 | D3     |
+| E6  | ROBIN   | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
++-----+---------+---------+-------+------+------------+--------+
+
+DATA RETRIEVAL
+================================================
+1.ALL DATA FROM TABLE
+ SELECT * FROM EMP;
+2.SPECIFIC COLUMN DATA
+  SELECT ENAME,JOB,SAL FROM EMP;
+   +---------+---------+-------+
+| ENAME   | JOB     | SAL   |
++---------+---------+-------+
+| SUMAN   | MANAGER | 50000 |
+| ALOKE   | CLERK   | 25000 |
+| ANNANYA | ANALYST | 45000 |
+| RUPAM   | MANAGER | 65000 |
+| JAYANTA | CLERK   | 30000 |
+| ROBIN   | MANAGER | 55000 |
++---------+---------+-------+
+3.RESTRICTION OF DATA
+SELECT * FROM EMP WHERE ENAME='ALOKE';
++-----+-------+-------+-------+------+------------+--------+
+| EID | ENAME | JOB   | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+-------+-------+-------+------+------------+--------+
+| E2  | ALOKE | CLERK | 25000 | 2000 | 2016-02-15 | D1     |
++-----+-------+-------+-------+------+------------+--------+
+SELECT * FROM EMP WHERE JOB='CLERK';
++-----+---------+-------+-------+------+------------+--------+
+| EID | ENAME   | JOB   | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+-------+-------+------+------------+--------+
+| E2  | ALOKE   | CLERK | 25000 | 2000 | 2016-02-15 | D1     |
+| E5  | JAYANTA | CLERK | 30000 | NULL | 2018-07-18 | D3     |
++-----+---------+-------+-------+------+------------+--------+
+
+4.IN OPERATOR
+SELECT * FROM EMP WHERE JOB IN('CLERK','MANAGER');
++-----+---------+---------+-------+------+------------+--------+
+| EID | ENAME   | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+---------+-------+------+------------+--------+
+| E1  | SUMAN   | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
+| E2  | ALOKE   | CLERK   | 25000 | 2000 | 2016-02-15 | D1     |
+| E4  | RUPAM   | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E5  | JAYANTA | CLERK   | 30000 | NULL | 2018-07-18 | D3     |
+| E6  | ROBIN   | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
+
+SELECT * FROM EMP WHERE JOB NOT IN('CLERK','MANAGER');
+6.AND OPERATOR
+SELECT * FROM EMP WHERE JOB='CLERK' AND SAL >25000;
+
++-----+---------+-------+-------+------+------------+--------+
+| EID | ENAME   | JOB   | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+-------+-------+------+------------+--------+
+| E5  | JAYANTA | CLERK | 30000 | NULL | 2018-07-18 | D3     |
++-----+---------+-------+-------+------+------------+--------+
+SELECT * FROM EMP WHERE JOB='CLERK' OR SAL >25000;
+
+LIKE OPERATOR ===USED FOR SEARCHING
+============================================================================
+SELECT * FROM EMP WHERE ENAME LIKE 'S%';
+SELECT * FROM EMP WHERE ENAME LIKE '_L%';
+SELECT * FROM EMP WHERE ENAME LIKE '%A';
+SELECT * FROM EMP WHERE ENAME LIKE '%A%';
+==============================================================================
+ARITHMETIC OPERATOR
+============================================
+,-,*,/
+
+SELECT ENAME,JOB,SAL,COMM,SAL+COMM FROM EMP;
++---------+---------+-------+------+----------+
+| ENAME   | JOB     | SAL   | COMM | SAL+COMM |
++---------+---------+-------+------+----------+
+| SUMAN   | MANAGER | 50000 | 5000 |    55000 |
+| ALOKE   | CLERK   | 25000 | 2000 |    27000 |
+| ANNANYA | ANALYST | 45000 | 6000 |    51000 |
+| RUPAM   | MANAGER | 65000 | NULL |     NULL |
+| JAYANTA | CLERK   | 30000 | NULL |     NULL |
+| ROBIN   | MANAGER | 55000 | 4000 |    59000 |
++---------+---------+-------+------+----------+
+COLUMN ALIAS
+==================================================
+SELECT ENAME,JOB,SAL,COMM,SAL+COMM TOTALSAL FROM EMP;
+---------+---------+-------+------+----------+
+| ENAME   | JOB     | SAL   | COMM | TOTALSAL |
++---------+---------+-------+------+----------+
+| SUMAN   | MANAGER | 50000 | 5000 |    55000 |
+| ALOKE   | CLERK   | 25000 | 2000 |    27000 |
+| ANNANYA | ANALYST | 45000 | 6000 |    51000 |
+| RUPAM   | MANAGER | 65000 | NULL |     NULL |
+| JAYANTA | CLERK   | 30000 | NULL |     NULL |
+| ROBIN   | MANAGER | 55000 | 4000 |    59000 |
++---------+---------+-------+------+----------+
+SELECT ENAME,JOB,SAL,IFNULL(COMM,0) COMM,SAL+IFNULL(COMM,0) TOTALSAL FROM EMP;
+
++---------+---------+-------+------+----------+
+| ENAME   | JOB     | SAL   | COMM | TOTALSAL |
++---------+---------+-------+------+----------+
+| SUMAN   | MANAGER | 50000 | 5000 |    55000 |
+| ALOKE   | CLERK   | 25000 | 2000 |    27000 |
+| ANNANYA | ANALYST | 45000 | 6000 |    51000 |
+| RUPAM   | MANAGER | 65000 |    0 |    65000 |
+| JAYANTA | CLERK   | 30000 |    0 |    30000 |
+| ROBIN   | MANAGER | 55000 | 4000 |    59000 |
++---------+---------+-------+------+----------+
+
+SORTING DATA
+============================================
+1.ASCENDING ORDER
+2.DESCENDING ORDER
+mysql> SELECT * FROM EMP ORDER BY ENAME;
++-----+---------+---------+-------+------+------------+--------+
+| EID | ENAME   | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+---------+-------+------+------------+--------+
+| E2  | ALOKE   | CLERK   | 25000 | 2000 | 2016-02-15 | D1     |
+| E3  | ANNANYA | ANALYST | 45000 | 6000 | 2016-05-15 | D2     |
+| E5  | JAYANTA | CLERK   | 30000 | NULL | 2018-07-18 | D3     |
+| E6  | ROBIN   | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
+| E4  | RUPAM   | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E1  | SUMAN   | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
++-----+---------+---------+-------+------+------------+--------+
+mysql> SELECT * FROM EMP ORDER BY SAL DESC ;
++-----+---------+---------+-------+------+------------+--------+
+| EID | ENAME   | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+---------+-------+------+------------+--------+
+| E4  | RUPAM   | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E6  | ROBIN   | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
+| E1  | SUMAN   | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
+| E3  | ANNANYA | ANALYST | 45000 | 6000 | 2016-05-15 | D2     |
+| E5  | JAYANTA | CLERK   | 30000 | NULL | 2018-07-18 | D3     |
+| E2  | ALOKE   | CLERK   | 25000 | 2000 | 2016-02-15 | D1     |
++-----+---------+---------+-------+------+------------+--------+ 
+mysql> SELECT * FROM EMP ORDER BY SAL DESC LIMIT 2;
++-----+-------+---------+-------+------+------------+--------+
+| EID | ENAME | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+-------+---------+-------+------+------------+--------+
+| E4  | RUPAM | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E6  | ROBIN | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
++-----+-------+---------+-------+------+------------+--------+
+
+DUPLICATE TABLE
+==========================================================
+CREATE TABLE DEPT1 AS SELECT * FROM DEPT;
+SELECT * FROM DEPT1;
+DESC DEPT;
+DESC DEPT1;
+CREATE TABLE DEPT2 AS SELECT * FROM DEPT WHERE DEPTNO IS NULL;
+CREATE TABLE DEPT3 AS SELECT * FROM DEPT WHERE 1=2;
+===============================================================
+mysql> DESC DEPT3;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | varchar(10) | NO   |     | NULL    |       |
+| DNAME  | varchar(25) | NO   |     | NULL    |       |
+| LOC    | varchar(25) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC DEPT2;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | varchar(10) | NO   |     | NULL    |       |
+| DNAME  | varchar(25) | NO   |     | NULL    |       |
+| LOC    | varchar(25) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | varchar(10) | NO   | PRI | NULL    |       |
+| DNAME  | varchar(25) | NO   |     | NULL    |       |
+| LOC    | varchar(25) | NO   |     | NULL    |       |
+====================================================================================
+mysql> SELECT * FROM DEPT1;
++--------+---------+---------+
+| DEPTNO | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | CHENNAI |
+| D3     | HR      | DELHI   |
+| D4     | OPRN    | KOLKATA |
++--------+---------+---------+
+UPDATE DATA
+==============================================================================
+UPDATE DEPT1 SET  DNAME='IT',LOC='MUMBAI' WHERE DEPTNO='D4';
+SELECT * FROM DEPT1;
+mysql> SELECT * FROM DEPT1;
++--------+---------+---------+
+| DEPTNO | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | CHENNAI |
+| D3     | HR      | DELHI   |
+| D4     | IT      | MUMBAI  |
++--------+---------+---------+
+
+DELETE DATA
+=============================================================================
+DELETE FROM DEPT1 WHERE DEPTNO='D4';
+SELECT * FROM DEPT1;
+
+mysql> SELECT * FROM DEPT1;
++--------+---------+---------+
+| DEPTNO | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | CHENNAI |
+| D3     | HR      | DELHI   |
++--------+---------+---------+
+
+
+mysql> SELECT * FROM DEPT;
++--------+---------+---------+
+| DEPTNO | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | CHENNAI |
+| D3     | HR      | DELHI   |
+| D4     | OPRN    | KOLKATA |
++--------+---------+---------+
+mysql> SELECT * FROM EMP;
++-----+---------+---------+-------+------+------------+--------+
+| EID | ENAME   | JOB     | SAL   | COMM | HIREDATE   | DEPTNO |
++-----+---------+---------+-------+------+------------+--------+
+| E1  | SUMAN   | MANAGER | 50000 | 5000 | 2018-02-12 | D1     |
+| E2  | ALOKE   | CLERK   | 25000 | 2000 | 2016-02-15 | D1     |
+| E3  | ANNANYA | ANALYST | 45000 | 6000 | 2016-05-15 | D2     |
+| E4  | RUPAM   | MANAGER | 65000 | NULL | 2017-05-15 | D2     |
+| E5  | JAYANTA | CLERK   | 30000 | NULL | 2018-07-18 | D3     |
+| E6  | ROBIN   | MANAGER | 55000 | 4000 | 2019-05-25 | D3     |
++-----+---------+---------+-------+------+------------+--------+
+
+
+
+JOINING
+=========================================
+FETCHING DATA FROM MULTIPLE TABLES
+
+TYPES OF JOINING
+======================================
+1.EQUI JOIN===BOTH THE TABLE COMMON DATA
+2.OUTER JOIN====BOTH THE TABLES COMMON DATA+EXTRA DATA OF ANOTHER TABLE 
+    LEFT OUTER JOIN==BOTH THE TABLES COMMON DATA+EXTRA DATA OF LEFT TABLE 
+    RIGHT OUTER JOIN==BOTH THE TABLES COMMON DATA+EXTRA DATA OF RIGHT TABLE 
+    FULL   OUTER JOIN===BOTH THE TABLES COMMON DATA+EXTRA DATA OF BOTH TABLE
+===============================================================================
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E,DEPT D WHERE E.DEPTNO=D.DEPTNO;
+
+mysql> SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E,DEPT D 
+        WHERE E.DEPTNO=D.DEPTNO;
++---------+---------+-------+--------+---------+---------+
+| ENAME   | JOB     | SAL   | DEPTNO | DNAME   | LOC     |
++---------+---------+-------+--------+---------+---------+
+| SUMAN   | MANAGER | 50000 | D1     | MKTG    | KOLKATA |
+| ALOKE   | CLERK   | 25000 | D1     | MKTG    | KOLKATA |
+| ANNANYA | ANALYST | 45000 | D2     | FINANCE | CHENNAI |
+| RUPAM   | MANAGER | 65000 | D2     | FINANCE | CHENNAI |
+| JAYANTA | CLERK   | 30000 | D3     | HR      | DELHI   |
+| ROBIN   | MANAGER | 55000 | D3     | HR      | DELHI   |
++---------+---------+-------+--------+---------+---------+
+
+
+
+ 
+
+
+
+
+
+
+
 
 
 
