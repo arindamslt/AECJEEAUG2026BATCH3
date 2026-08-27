@@ -689,10 +689,58 @@ mysql> SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E,DEPT D
 | JAYANTA | CLERK   | 30000 | D3     | HR      | DELHI   |
 | ROBIN   | MANAGER | 55000 | D3     | HR      | DELHI   |
 +---------+---------+-------+--------+---------+---------+
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E JOIN DEPT D ON(E.DEPTNO=D.DEPTNO); 
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E LEFT OUTER JOIN DEPT D ON(E.DEPTNO=D.DEPTNO);
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E RIGHT OUTER JOIN DEPT D ON(E.DEPTNO=D.DEPTNO);
+---------+---------+-------+--------+---------+---------+
+| ENAME   | JOB     | SAL   | DEPTNO | DNAME   | LOC     |
++---------+---------+-------+--------+---------+---------+
+| SUMAN   | MANAGER | 50000 | D1     | MKTG    | KOLKATA |
+| ALOKE   | CLERK   | 25000 | D1     | MKTG    | KOLKATA |
+| ANNANYA | ANALYST | 45000 | D2     | FINANCE | CHENNAI |
+| RUPAM   | MANAGER | 65000 | D2     | FINANCE | CHENNAI |
+| JAYANTA | CLERK   | 30000 | D3     | HR      | DELHI   |
+| ROBIN   | MANAGER | 55000 | D3     | HR      | DELHI   |
+| NULL    | NULL    |  NULL | D4     | OPRN    | KOLKATA |
++---------+---------+-------+--------+---------+---------+
 
 
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM DEPT D LEFT  OUTER JOIN EMP E ON(D.DEPTNO=E.DEPTNO);
 
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E RIGHT OUTER JOIN DEPT D ON(E.DEPTNO=D.DEPTNO)
+EXCEPT
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E  JOIN DEPT D ON(E.DEPTNO=D.DEPTNO);
+
+ ENAME | JOB  | SAL  | DEPTNO | DNAME | LOC     |
++-------+------+------+--------+-------+---------+
+| NULL  | NULL | NULL | D4     | OPRN  | KOLKATA |
  
+VIEW
+=================================================
+LOGICAL STRUCTURE OF A TABLE BUT IT DOES NOT STORE DATA PERMANENTLY
+
+CREATE VIEW EMP_DEPT_VW
+AS
+SELECT E.ENAME,E.JOB,E.SAL,D.DEPTNO,D.DNAME,D.LOC FROM EMP E,DEPT D 
+ WHERE E.DEPTNO=D.DEPTNO;  
+
+SELECT * FROM EMP_DEPT_VW; 
+mysql> SELECT * FROM EMP_DEPT_VW;
++---------+---------+-------+--------+---------+---------+
+| ENAME   | JOB     | SAL   | DEPTNO | DNAME   | LOC     |
++---------+---------+-------+--------+---------+---------+
+| SUMAN   | MANAGER | 50000 | D1     | MKTG    | KOLKATA |
+| ALOKE   | CLERK   | 25000 | D1     | MKTG    | KOLKATA |
+| ANNANYA | ANALYST | 45000 | D2     | FINANCE | CHENNAI |
+| RUPAM   | MANAGER | 65000 | D2     | FINANCE | CHENNAI |
+| JAYANTA | CLERK   | 30000 | D3     | HR      | DELHI   |
+| ROBIN   | MANAGER | 55000 | D3     | HR      | DELHI   |
++---------+---------+-------+--------+---------+---------+
+======================================================================================
+
+
+
+
 
 
 
