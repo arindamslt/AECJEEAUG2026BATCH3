@@ -811,6 +811,70 @@ mysql> SELECT * FROM PRODUCT;
 
 DATE:29.08.2026
 =========================================================================================
+JEE
+==============================
+JAVA ENTERPRISE EDITION
+IT CAN SUPPORT n-TIER ARCHITECTURE
+TYPES OF ARCHITECTURE
+===================================
+1.TWO TIER ARCHITECTURE
+2.THREE TIER ARCHITECTURE
+3.n-TIER ARCHITECTURE
+COMPONENTS OF JEE
+===============================
+1.SERVLET
+2.JSP
+3.EJB
+4.JMS
+5.JAVA MAIL
+===============================================================
+SERVLET
+=================================================
+SERVLET IS A SERVER SIDE PROGRAM
+IT REQUEST RESPONSE ORIENTED PROGRAM
+IT IS ACT AS AN CONTROLLER
+SERVLET IS A JAVA CLASS
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+LIFE CYCLE OF SERVLET
+=====================================
+1.init()
+2.service()
+3.destroy()
+HIERARCHY OF SERVLET
+================================
+1.GenericServlet
+2.HttpServlet
+3.MyServlet
+========================================================
+SERVLET TO SERVLET,SERVLET TO HTML COMMUNICATION
+==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		  
 
