@@ -850,6 +850,83 @@ HIERARCHY OF SERVLET
 ========================================================
 SERVLET TO SERVLET,SERVLET TO HTML COMMUNICATION
 ==============================================================
+GET                   VS           POST
+=======================================================
+1.IT IS IN SECURED     1.IT IS SECURED
+2.DATA EMBEDDED IN URL 2.DATA ARE NOT EMBEDDED IN URL
+3.AMOUT OF DATA        3.ANY AMOUNT OF DATA CAN BE SEND
+ SENDING RESTRICTED
+4.GET IS MORE FASTER   4.POST IS LESS FASTER THAN GET
+THAN POST
+=========================================================
+JSP
+===========================================================
+JAVA SERVER PAGES 
+JSP IS ACT AS AN VIEW DATA
+JSP IS ANOTHER FORM OF SERVLET
+HTML      VS             JSP
+=======================================
+IT SUPPORT           WE CAN WRITE BOTH HTML CODE AND JAVA CODE
+HTML CODE
+======================================================================
+Test.jsp
+=======================
+<body>
+<h2>JSP</h2>
+<%
+int x=10;
+
+%>
+
+</body>
+
+<%    %>===SCRIPLET====WRITE THE JAVA CODE
+<% =x %>===PRINT THE VALUE OF X ===EXPRESSION
+<% out.println(x);%>
+
+Test.jsp====compile===Test_jsp.java(Servlet)=====compile===Test_jsp.class===O/P
+
+LIFE CYCLE OF JSP
+=======================================
+jspinit()
+jspservice()
+jspdestroy()
+=============================================
+PATH WHERE JSP CONVERTED TO SERVLET
+C:\JEETAUGUST2026B3\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\JSPDEMO\org\apache\jsp
+================================================================
+JSP TO JSP COMMUNICATION
+====================================================================
+JSP ACTION TAG
+==========================================================
+1.<jsp:include>
+2.<jsp:forward>
+3.<jsp:setProperty>   =====IN BUILT JAVA CODE ARE THERE
+4.<jsp:getProperty>
+5.<jsp:useBean>
+6.<jsp:param>
+===========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
