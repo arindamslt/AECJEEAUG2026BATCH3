@@ -11,7 +11,7 @@
 <body>
 <div style="width:30%;margin:50px auto;">
 	<h2 class="text-success" style="text-align: center;">UPDATE FOOD FORM</h2>
-	<form action="" method="post" >
+	<form action="FoodUpdServe" method="post" >
 		<input type="text" name="fid" class="form-control" placeholder="ENTER THE FOOD ID "/>
 		<input type="text" name="fname" class="form-control" placeholder="ENTER THE FOOD NAME "/>
 		<input type="text" name="price" class="form-control" placeholder="ENTER THE PRICE "/>

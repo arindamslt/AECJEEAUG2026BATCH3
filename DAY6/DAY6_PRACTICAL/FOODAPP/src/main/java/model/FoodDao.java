@@ -11,8 +11,43 @@ public class FoodDao {
 	private ResultSet rs=null;
 	//private String select_sql="select * from product";
 	private String insert_sql="insert into food values(?,?,?)";
-	//private String delete_sql="delete from product where pid=?";
-	//private String update_sql="update product set pname=?,pqty=?,price=? where pid=?";
+	private String delete_sql="delete from food where fid=?";
+	private String update_sql="update food set fname=?,price=? where fid=?";
+	public void updateData(String fid,String fname,double price)
+	{
+		try
+		{
+		    ConnectionFactory con=new ConnectionFactory();
+		    cn=con.getConn();
+		  ps=cn.prepareStatement(update_sql);
+		  ps.setString(3,fid);
+		  ps.setString(1,fname);
+		 	 ps.setDouble(2,price);
+		  ps.executeUpdate();//DATA SAVED INTO TABLE
+		}
+		
+		catch(SQLException se)
+		{
+			se.printStackTrace();
+		}
+	}
+	public void deleteData(String fid)
+	{ 
+		try
+		{
+		    ConnectionFactory con=new ConnectionFactory();
+		    cn=con.getConn();
+		  ps=cn.prepareStatement(delete_sql);
+		  ps.setString(1,fid);
+		
+		  ps.executeUpdate();//DATA SAVED INTO TABLE
+		}
+		
+		catch(SQLException se)
+		{
+			se.printStackTrace();
+		}
+	}
 	public void insertData(String fid,String fname,double price)
 	{
 		try

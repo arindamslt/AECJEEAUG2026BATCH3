@@ -11,7 +11,7 @@
 <body>
 <div style="width:30%;margin:50px auto;">
 	<h2 class="text-secondary" style="text-align: center;">DELETE FOOD FORM</h2>
-	<form action="" method="post" >
+	<form action="FoodDelServe" method="post" >
 		<input type="text" name="fid" class="form-control" placeholder="ENTER THE FOOD ID "/>
 		
 	 	<input type="submit" class="btn btn-outline-secondary" value="DELETE"/>
