@@ -906,6 +906,166 @@ JSP ACTION TAG
 5.<jsp:useBean>
 6.<jsp:param>
 ===========================================================
+DATE:31.08.2026
+=============================================================================
+SESSION MANAGEMENT
+================================================================================
+SESSION MANAGEMENT CAN DONE BY USING SERVLET OR JSP
+===========================================================================
+SESSION MANAGEMENT IS DONE BY FOUR WAYS
+=====================================================
+1.URL REWRITTING
+2.SESSION
+3.COOKEIS
+4.INPUT FROM HIDDEN FIELDS
+==========================================
+PROJECT
+==========================================
+DESIGN PATTERN
+==========================================
+MVC DESIGN PATTERN
+M===MODEL===COMMUNICATE TO DATABASE
+V==VIEW
+C===CONTROLLER
+WELL APPROVED SOLUTION
+=============================================
+ADMIN
+CLIENT
+================================================
+DYNAMIC WEB PROJECT NAME:FOODAPP
+DATABASE NAME:FDBAPP
+UASERNAME:root
+PASSWORD:arindam
+MYSQL PORT NUMBER:3306
+SOFTWARE:JAVA17 ONWARDS
+DATABASE:MYSQL
+TECHNOLOGY:SERVLET,JSP,CORE JAVA,HTML,CSS,JAVASCRIPT,BOOTSTRAP
+====================================================================
+CREATE DATABASE FDBAPP;
+USE FDBAPP;
+SHOW TABLES;
+CREATE TABLE FOOD
+(FID VARCHAR(10),
+ FNAME VARCHAR(25) NOT NULL,
+ PRICE  DECIMAL,
+ CONSTRAINT FOOD_FID_PK PRIMARY KEY(FID)
+);
+mysql> DESC FOOD;
++-------+---------------+------+-----+---------+-------+
+| Field | Type          | Null | Key | Default | Extra |
++-------+---------------+------+-----+---------+-------+
+| FID   | varchar(10)   | NO   | PRI | NULL    |       |
+| FNAME | varchar(25)   | NO   |     | NULL    |       |
+| PRICE | decimal(10,0) | YES  |     | NULL    |       |
++-------+---------------+------+-----+---------+-------+
+===========================================================
+DYNAMIC WEB PROJECT NAME
+============================
+FOODAPP
+COPY THE MYSQL JAR FILE INTO WEB-INF-LIB---PASTE
+
+DATE:01.09.2026
+====================================================================================
+USE FDBAPP;
+CREATE TABLE REGISTER
+(UNAME VARCHAR(10),
+ PASS  VARCHAR(10) NOT NULL,
+ NM    VARCHAR(25) NOT NULL,
+ CONSTRAINT REGISTER_UNAME_PK PRIMARY KEY(UNAME)
+);
+DESC REGISTER;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| UNAME | varchar(10) | NO   | PRI | NULL    |       |
+| PASS  | varchar(10) | NO   |     | NULL    |       |
+| NM    | varchar(25) | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+============================================================================
+
+
+mysql> SELECT * FROM REGISTER WHERE UNAME='arup123' and pass='1234';
++---------+------+--------------+
+| UNAME   | PASS | NM           |
++---------+------+--------------+
+| arup123 | 1234 | ARUP SAMANTA |
++---------+------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM REGISTER WHERE UNAME='arup123' and pass='12345';
+================================================================================
+
+http://localhost:8080/FOODAPP/
+
+CREATE TABLE ORDERDTLS
+(OID  INT AUTO_INCREMENT,
+ ODT  DATE DEFAULT (CURRENT_DATE()),
+ FID  VARCHAR(10) NOT NULL,
+ QTY  DECIMAL,
+ UNAME VARCHAR(10) NOT NULL,
+ CONSTRAINT ORDERDTLS_OID_PK PRIMARY KEY(OID)
+);
+DESC ORDERDTLS;
++-------+---------------+------+-----+-----------+-------------------+
+| Field | Type          | Null | Key | Default   | Extra             |
++-------+---------------+------+-----+-----------+-------------------+
+| OID   | int           | NO   | PRI | NULL      | auto_increment    |
+| ODT   | date          | YES  |     | curdate() | DEFAULT_GENERATED |
+| FID   | varchar(10)   | NO   |     | NULL      |                   |
+| QTY   | decimal(10,0) | YES  |     | NULL      |                   |
+| UNAME | varchar(10)   | NO   |     | NULL      |                   |
++-------+---------------+------+-----+-----------+-------------------+
+==========================================================================================
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
